@@ -1,0 +1,11 @@
+setwd("C:\\Users\\gaimm\\OneDrive\\Desktop\\datasciencecoursera\\EDA")
+df<-read.csv("household_power_consumption.txt", sep=";", header = TRUE, na.strings="?")
+str(df)
+dim(df)
+df$DateTime <- strptime(paste(df$Date, df$Time), "%d/%m/%Y %H:%M:%S") 
+clean<-df[df$Date %in% c("1/2/2007","2/2/2007") ,]
+dim(clean)
+source("plot1.R")
+source("plot2.R")
+source("plot3.R")
+source("plot4.R")
